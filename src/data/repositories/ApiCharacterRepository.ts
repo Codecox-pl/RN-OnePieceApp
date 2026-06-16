@@ -35,8 +35,23 @@ export class ApiCharacterRepository implements CharacterRepository{
         }
     }
    
+    private formatNameForUrl(name: string): string {
+        
+        const cleanName = name.trim().toLowerCase();
+
+        const nameParts = cleanName.split(' ');
+
+        const shortName = nameParts.pop() || 'default';
+        
+        return shortName;
+    }
     
     private mapToEntity(dto: CharacterDTO): Character{
+
+        const formattedName = this.formatNameForUrl(dto.name);
+
+        const cloudinaryBaseUrl = `https://res.cloudinary.com/de9sxrhqg/image/upload/v1781641522/${formattedName}.webp`
+
         return{
             id: dto.id,
             name: dto.name,
@@ -44,8 +59,8 @@ export class ApiCharacterRepository implements CharacterRepository{
             bounty: dto.bounty,
             status: dto.status || 'Unknown',
             size: dto.size || 'Normal',
-            imageUrl: `https://res.cloudinary.com/de9sxrhqg/image/upload/v1781641522/{dto.name}.web`
-        }
+            imageUrl: cloudinaryBaseUrl
+        };
     }
 
 }
