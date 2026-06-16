@@ -5,5 +5,4 @@ export interface Fruit{
     type: string;
     description: string;
     filename: string;
-    technicalFile:string;
 }

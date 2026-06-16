@@ -44,7 +44,7 @@ export class ApiCharacterRepository implements CharacterRepository{
             bounty: dto.bounty,
             status: dto.status || 'Unknown',
             size: dto.size || 'Normal',
-            imageUrl: 'https://comicvine.gamespot.com/a/uploads/scale_small/11117/111178336/7080202-1635462455-unkno.png'
+            imageUrl: `https://res.cloudinary.com/de9sxrhqg/image/upload/v1781641522/{dto.name}.web`
         }
     }
 
