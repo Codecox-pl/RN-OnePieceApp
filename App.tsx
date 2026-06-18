@@ -1,4 +1,5 @@
-import { CharacterScreen } from '@presentation/screens/CharacterScreen';
+import { CharacterScreen } from '@presentation/screens/CharacterScreen/CharacterScreen';
+
 import React from 'react';
 import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
 
@@ -13,7 +14,7 @@ export default function App() {
       <StatusBar barStyle="dark-content" backgroundColor="#f5f5f5" />
 
       {/* 2. Instanciamos y dibujamos tu pantalla */}
-      < CharacterScreen/>
+      <CharacterScreen/>
 
     </SafeAreaView>
   );
